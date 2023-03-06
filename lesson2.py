@@ -6,7 +6,6 @@ def custom_filter(some_list):
 
 def main():
     some_list = [7, 14, 28, 32, 32, 56]
-
     print(custom_filter(some_list))
 
 
