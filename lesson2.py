@@ -25,4 +25,5 @@ def r(s, ch):
                 return False
 
 
+
 print(r('a(c)d()(d)', ''))
