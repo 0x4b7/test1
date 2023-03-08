@@ -1,13 +1,28 @@
-def custom_filter(some_list):
-    res = [i for i in some_list if isinstance(i, int)]
-    s = sum([j for j in res if j % 7 == 0])
-    return s < 83
+def r(s, ch):
+    if len(s) == 0:
+        return True
+    else:
+        if s[0] == '(':
+            ch = s[0]
+            s = s[1:]
+            if r(s, ch):return True
+            else:
+                return False
+        elif s[0] == ')' and ch == '':
+            return False
+        elif s[0] == ')' and ch == '(':
+            ch = ''
+            s = s[1:]
+            if r(s, ch):
+                return True
+            else:
+                return False
+        else:
+            s = s[1:]
+            if r(s, ch):
+                return True
+            else:
+                return False
 
 
-def main():
-    some_list = [7, 14, 28, 32, 32, 56]
-    print(custom_filter(some_list))
-
-
-if __name__ == '__main__':
-    main()
+print(r('a(c)d()(d)', ''))
